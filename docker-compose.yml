@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  yolov8-trainer:
+    image: yolov8_rocm:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yolov8_rocm_container
+    devices:
+      - /dev/kfd
+      - /dev/dri
+    group_add:
+      - video
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: python3 train.py

@@ -1,0 +1,12 @@
+# Ignore dataset
+data/
+*.jpg
+*.png
+
+# Ignore results from YOLO training
+runs/
+*.pt
+
+# Ignore Python cache files
+__pycache__/
+*.pyc

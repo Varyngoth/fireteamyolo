@@ -1,0 +1,6 @@
+train: ./data/train
+val: ./data/val
+test: ./data/test
+
+nc: 2
+names: ['nowildfire', 'wildfire']
