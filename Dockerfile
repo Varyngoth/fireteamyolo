@@ -3,6 +3,12 @@ FROM rocm/rocm-terminal:latest
 # Switch to root user to have the necessary permissions
 USER root
 
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    && add-apt-repository ppa:deadsnakes/ppa \
+    && apt-get update \
+    && apt-get install -y python3.10 python3.10-distutils
+
 # Update apt and install dependencies
 RUN apt-get update && apt-get install -y python3 python3-pip python3-distutils \
     && apt-get install -y python3.10 python3.10-distutils \
